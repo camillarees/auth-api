@@ -6,7 +6,7 @@
 
 
 ### Deployment and Documentation
-[Deployed Server on Render](https://bearer-auth-2.onrender.com/)
+[Deployed Server on Render](https://auth-api-7kqj.onrender.com/)
 
 ![Auth API Whiteboard](assets/lab-08-whiteboard.png)
 
@@ -30,7 +30,7 @@ Restrictive Capabilities of our routes to our API:
 ## Change Log
 
 [12/7/2022 9:56 PM MDT PR](https://github.com/camillarees/auth-api/pull/1)
-[12/7/2022 10:00 PM MDT PR]()
+[12/7/2022 10:00 PM MDT PR](https://github.com/camillarees/auth-api/pull/2)
 
 ## Credit and Collaborations
 - [401n49 Starter Code](https://github.com/codefellows/seattle-code-javascript-401d49/tree/main/class-08/lab/starter-code)
