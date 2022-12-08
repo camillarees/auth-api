@@ -2,31 +2,27 @@
 
 // 3rd Party Resources
 const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
 
 // Esoteric Resources
+const notFound = require('./error-handlers/404.js');
 const errorHandler = require('./error-handlers/500.js');
 const logger = require('./middleware/logger.js');
-const notFound = require('./error-handlers/404.js');
 
-const authRoutes = require('./routes/routes.js');
+const authRoutes = require('./auth/routes.js');
+const v1Routes = require('./routes/v1.js');
 const v2Routes = require('./routes/v2.js');
 
 // Prepare the express app
 const app = express();
 
 // App Level MW
-app.use(cors());
-app.use(morgan('dev'));
-app.use(logger);
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(logger);
 
 // Routes
 app.use(authRoutes);
-app.use('/api/v2', v2Routes); // http://localhost:3000/api/v1/clothes
+app.use('/api/v1', v1Routes); // http://localhost:3000/api/v2/clothes
+app.use('/api/v2', v2Routes); // http://localhost:3000/api/v2/clothes
 
 // Catchalls
 app.use('*', notFound);
